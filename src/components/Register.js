@@ -67,18 +67,21 @@ const Register = () => {
     } else {
       // console.log("user registration succesfully done");
 
-      const data = await fetch("/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fname,
-          email,
-          password,
-          cpassword,
-        }),
-      });
+      const data = await fetch(
+        "https://password-rest-lry8.onrender.com/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fname,
+            email,
+            password,
+            cpassword,
+          }),
+        }
+      );
 
       const res = await data.json();
       // console.log(res.status);

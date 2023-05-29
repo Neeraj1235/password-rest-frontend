@@ -49,16 +49,19 @@ const Login = () => {
     } else {
       // console.log("user login succesfully done");
 
-      const data = await fetch("/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
+      const data = await fetch(
+        "https://password-rest-lry8.onrender.com/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        }
+      );
 
       const res = await data.json();
       //  console.log(res);

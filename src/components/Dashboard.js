@@ -14,13 +14,16 @@ const Dashboard = () => {
   const DashboardValid = async () => {
     let token = localStorage.getItem("usersdatatoken");
 
-    const res = await fetch("/validuser", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    });
+    const res = await fetch(
+      "https://password-rest-lry8.onrender.com/validuser",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      }
+    );
 
     const data = await res.json();
 

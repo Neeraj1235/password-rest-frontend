@@ -22,13 +22,16 @@ const PasswordReset = () => {
         position: "top-center",
       });
     } else {
-      const res = await fetch("/sendpasswordlink", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+      const res = await fetch(
+        "https://password-rest-lry8.onrender.com/sendpasswordlink",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
 
       const data = await res.json();
 

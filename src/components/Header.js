@@ -23,7 +23,7 @@ const Header = () => {
   const logoutuser = async () => {
     let token = localStorage.getItem("usersdatatoken");
 
-    const res = await fetch("/logout", {
+    const res = await fetch("https://password-rest-lry8.onrender.com/logout", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const Header = () => {
     console.log(data);
 
     if (data.status == 201) {
-      console.log("use logout");
+      console.log("user logout");
       localStorage.removeItem("usersdatatoken");
       setLoginData(false);
       history("/");

@@ -16,12 +16,15 @@ const ForgotPassword = () => {
   const [message, setMessage] = useState("");
 
   const userValid = async () => {
-    const res = await fetch(`/forgotpassword/${id}/${token}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://password-rest-lry8.onrender.com/forgotpassword/${id}/${token}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const data = await res.json();
 
@@ -48,13 +51,16 @@ const ForgotPassword = () => {
         position: "top-center",
       });
     } else {
-      const res = await fetch(`/${id}/${token}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ password }),
-      });
+      const res = await fetch(
+        `https://password-rest-lry8.onrender.com/${id}/${token}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ password }),
+        }
+      );
 
       const data = await res.json();
 
